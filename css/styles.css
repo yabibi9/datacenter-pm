@@ -150,3 +150,317 @@ footer {
   .task-status:hover {
     background-color: #1976D2;
   }
+  .financial-management {
+    padding: 20px;
+    background-color: #f5f5f5;
+  }
+  
+  section {
+    margin-bottom: 30px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #4CAF50;
+    color: white;
+  }
+  /* Styles for Forms */
+.form-container {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+  
+  .form-group {
+    flex: 1;
+    min-width: 200px;
+  }
+  
+  input, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+  }
+  
+  input:focus, select:focus {
+    border-color: #4CAF50;
+    outline: none;
+  }
+  
+  .submit-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .submit-button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Adjust Layout */
+  .financial-management {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .budget-overview {
+    width: 60%;
+    margin-bottom: 2rem;
+  }
+  
+  .change-management, .pay-applications {
+    width: 80%;
+    margin-bottom: 2rem;
+  }
+  
+  canvas {
+    max-width: 100%;
+  }
+  .budget-builder {
+    margin-top: 20px;
+  }
+  
+  .budget-builder form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .budget-builder input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 200px;
+  }
+  
+  .budget-builder button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .budget-builder button:hover {
+    background-color: #45a049;
+  }
+  .budget-builder-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .budget-builder-form input {
+    padding: 8px;
+    width: 200px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .add-category-btn {
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .budget-overview canvas {
+    margin-top: 20px;
+  }
+  
+  .financial-management section {
+    margin-bottom: 40px;
+  }
+  
+  .submit-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  .document-management {
+    padding: 20px;
+  }
+  
+  .dropdown-container {
+    margin-bottom: 20px;
+  }
+  
+  select {
+    padding: 5px;
+    margin-left: 10px;
+  }
+  
+  .document-section {
+    margin-top: 20px;
+  }
+  /* Add these styles if not already present */
+.project-overview .metric {
+    margin-bottom: 20px;
+  }
+  
+  .project-overview .progress-bar {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .project-overview .progress {
+    height: 20px;
+    background-color: #4CAF50;
+    text-align: center;
+    line-height: 20px;
+    color: white;
+  }
+  
+  #model-viewer {
+    height: 400px;
+    width: 100%;
+    overflow: hidden;
+  }
+  .task-summary {
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+  }
+  
+  .add-task, .task-filter {
+    margin-bottom: 20px;
+  }
+  
+  .add-task input, .task-item input {
+    padding: 8px;
+    margin-right: 10px;
+    width: 60%;
+  }
+  
+  .add-task button, .task-filter button, .task-item button {
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-right: 5px;
+  }
+  
+  .task-filter button {
+    background-color: #2196F3;
+  }
+  
+  .task-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .task-item.completed {
+    opacity: 0.6;
+  }
+  
+  .task-title {
+    flex-grow: 1;
+  }
+  
+  .task-priority, .task-status {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    margin-right: 10px;
+  }
+  
+  .task-priority {
+    background-color: #FFC107;
+  }
+  
+  .task-status {
+    background-color: #2196F3;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .task-status:hover {
+    background-color: #1976D2;
+  }
+  
+  .task-item select {
+    padding: 4px;
+    margin-right: 10px;
+  }
+  .resource-allocation {
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+  }
+  
+  .add-resource {
+    margin-bottom: 20px;
+  }
+  
+  .add-resource input {
+    padding: 8px;
+    margin-right: 10px;
+  }
+  
+  .add-resource button {
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .resource-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .resource-table th, .resource-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .resource-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .resource-table input[type="number"] {
+    width: 60px;
+    padding: 4px;
+  }

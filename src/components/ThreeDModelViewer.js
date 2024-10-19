@@ -14,10 +14,10 @@ const ThreeDModelViewer = () => {
 
     // Camera setup
     const camera = new THREE.PerspectiveCamera(75, currentMount.clientWidth / currentMount.clientHeight, 0.1, 1000);
-    camera.position.z = 15;
+    camera.position.set(0, 5, 10);
 
     // Renderer setup
-    const renderer = new THREE.WebGLRenderer();
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(currentMount.clientWidth, currentMount.clientHeight);
     currentMount.appendChild(renderer.domElement);
 
@@ -32,26 +32,38 @@ const ThreeDModelViewer = () => {
     directionalLight.position.set(1, 1, 1);
     scene.add(directionalLight);
 
-    // Helper functions
-    const createServer = (x, y, z) => {
-      const serverGeometry = new THREE.BoxGeometry(1, 0.2, 0.5);
-      const serverMaterial = new THREE.MeshPhongMaterial({ color: 0x44aa88 });
-      const server = new THREE.Mesh(serverGeometry, serverMaterial);
-      server.position.set(x, y, z);
-      return server;
-    };
-
-    // Create data center components
-    const floorGeometry = new THREE.PlaneGeometry(10, 10);
-    const floorMaterial = new THREE.MeshPhongMaterial({ color: 0xcccccc, side: THREE.DoubleSide });
+    // Floor
+    const floorGeometry = new THREE.PlaneGeometry(20, 20);
+    const floorMaterial = new THREE.MeshStandardMaterial({ color: 0xcccccc, side: THREE.DoubleSide });
     const floor = new THREE.Mesh(floorGeometry, floorMaterial);
     floor.rotation.x = Math.PI / 2;
     scene.add(floor);
 
-    // Add server racks
-    for (let i = -4; i <= 4; i += 2) {
-      for (let j = 0; j < 5; j++) {
-        scene.add(createServer(i, j * 0.3, 0));
+    // Helper functions
+    const createRack = (x, z) => {
+      const rackGroup = new THREE.Group();
+      const rackGeometry = new THREE.BoxGeometry(1, 2, 0.5);
+      const rackMaterial = new THREE.MeshPhongMaterial({ color: 0x888888 });
+      const rack = new THREE.Mesh(rackGeometry, rackMaterial);
+      rack.position.set(x, 1, z);
+      rackGroup.add(rack);
+      
+      // Add servers to rack
+      for (let i = 0; i < 5; i++) {
+        const serverGeometry = new THREE.BoxGeometry(0.9, 0.2, 0.4);
+        const serverMaterial = new THREE.MeshPhongMaterial({ color: 0x44aa88 });
+        const server = new THREE.Mesh(serverGeometry, serverMaterial);
+        server.position.set(0, -0.8 + i * 0.3, 0);
+        rackGroup.add(server);
+      }
+      
+      return rackGroup;
+    };
+
+    // Add racks to the scene
+    for (let i = -8; i <= 8; i += 2) {
+      for (let j = -4; j <= 4; j += 2) {
+        scene.add(createRack(i, j));
       }
     }
 
@@ -63,8 +75,17 @@ const ThreeDModelViewer = () => {
     };
     animate();
 
+    // Handle window resize
+    const handleResize = () => {
+      camera.aspect = currentMount.clientWidth / currentMount.clientHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(currentMount.clientWidth, currentMount.clientHeight);
+    };
+    window.addEventListener('resize', handleResize);
+
     // Cleanup
     return () => {
+      window.removeEventListener('resize', handleResize);
       currentMount.removeChild(renderer.domElement);
     };
   }, []);
