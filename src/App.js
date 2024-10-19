@@ -1,46 +1,66 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import ThreeDModelViewer from './components/ThreeDModelViewer';
-import TaskSummary from './components/TaskSummary'; // Add this import
+import TaskSummary from './components/TaskSummary';
+import FinancialManagement from './pages/FinancialManagement'; 
+import ScheduleManagement from './pages/ScheduleManagement'; 
+import DocumentManagement from './pages/DocumentManagement'; 
+import ProjectOverview from './components/ProjectOverview';
+
 
 function App() {
   return (
-    <div className="App">
-      <header>
-        <nav>
-          <ul>
-            <li><a href="#dashboard">Dashboard</a></li>
-            <li><a href="#tasks">Tasks</a></li>
-            <li><a href="#resources">Resources</a></li>
-            <li><a href="#reports">Reports</a></li>
-          </ul>
-        </nav>
-      </header>
+    <Router>
+      <div className="App">
+        <header>
+          <nav>
+            <ul>
+              <li><Link to="/">Dashboard</Link></li>
+              <li><Link to="/tasks">Tasks</Link></li>
+              <li><Link to="/financials">Financial Management</Link></li>
+              <li><Link to="/schedule">Schedule Management</Link></li>
+              <li><Link to="/documents">Document Management</Link></li>
+            </ul>
+          </nav>
+        </header>
 
-      <main>
-        <section id="dashboard">
-          <h1>Project Dashboard</h1>
-          <div className="widget" id="project-overview">
-            <h2>Project Overview</h2>
-            {/* Project overview content */}
-          </div>
-          <div className="widget" id="model-viewer">
-            <h2>3D Model Viewer</h2>
-            <ThreeDModelViewer />
-          </div>
-          <div className="widget" id="task-summary">
-            <TaskSummary /> {/* Use the TaskSummary component here */}
-          </div>
-          <div className="widget" id="resource-allocation">
-            <h2>Resource Allocation</h2>
-            {/* Resource allocation content */}
-          </div>
-        </section>
-      </main>
+        <main>
+          <Routes>
+            <Route 
+              path="/" 
+              element={
+                <section id="dashboard">
+                  <h1>Project Dashboard</h1>
+                  <div className="widget" id="project-overview">
+                    <h2>Project Overview</h2>
+                    {/* Project overview content */}
+                  </div>
+                  <div className="widget" id="model-viewer">
+                    <h2>3D Model Viewer</h2>
+                    <ThreeDModelViewer />
+                  </div>
+                  <div className="widget" id="task-summary">
+                    <TaskSummary />
+                  </div>
+                  <div className="widget" id="resource-allocation">
+                    <h2>Resource Allocation</h2>
+                    {/* Resource allocation content */}
+                  </div>
+                </section>
+              } 
+            />
+            <Route path="/tasks" element={<TaskSummary />} />
+            <Route path="/financials" element={<FinancialManagement />} />
+            <Route path="/schedule" element={<ScheduleManagement />} />
+            <Route path="/documents" element={<DocumentManagement />} />
+          </Routes>
+        </main>
 
-      <footer>
-        <p>&copy; 2024 Data Center PM Software</p>
-      </footer>
-    </div>
+        <footer>
+          <p>&copy; 2024 Data Center PM Software</p>
+        </footer>
+      </div>
+    </Router>
   );
 }
 
