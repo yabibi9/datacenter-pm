@@ -6,9 +6,13 @@ import FinancialManagement from './pages/FinancialManagement';
 import ScheduleManagement from './pages/ScheduleManagement'; 
 import DocumentManagement from './pages/DocumentManagement'; 
 import ProjectOverview from './components/ProjectOverview';
-
+import ResourceAllocation from './components/ResourceAllocation';
 
 function App() {
+  console.log('App component is rendering');
+  console.log('ProjectOverview import:', ProjectOverview);
+  console.log('ResourceAllocation import:', ResourceAllocation);
+
   return (
     <Router>
       <div className="App">
@@ -32,8 +36,7 @@ function App() {
                 <section id="dashboard">
                   <h1>Project Dashboard</h1>
                   <div className="widget" id="project-overview">
-                    <h2>Project Overview</h2>
-                    {/* Project overview content */}
+                    <ProjectOverview />
                   </div>
                   <div className="widget" id="model-viewer">
                     <h2>3D Model Viewer</h2>
