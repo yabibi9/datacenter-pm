@@ -464,3 +464,330 @@ footer {
     width: 60px;
     padding: 4px;
   }
+  .subcontractor-tracker {
+    margin: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .subcontractor {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .subcontractor h3 {
+    margin-top: 0;
+    color: #333;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    margin: 5px 0;
+  }
+  .subcontractor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 4px;
+  }
+  
+  .subcontractor-tasks {
+    background-color: #fafafa;
+    border-radius: 4px;
+    margin-top: 10px;
+    padding: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  /* Schedule Management Styles */
+.schedule-management {
+  padding: 20px;
+}
+
+.schedule-management .task-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.schedule-management .task-form input {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.schedule-management .task-form button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.schedule-management .gantt-chart {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow-x: auto;
+}
+
+.schedule-management .gantt-header {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+}
+
+.schedule-management .day-header {
+  flex: 0 0 30px;
+  text-align: center;
+  padding: 5px;
+  border-right: 1px solid #eee;
+}
+
+.schedule-management .task-row {
+  display: flex;
+  border-bottom: 1px solid #eee;
+}
+
+.schedule-management .task-info {
+  flex: 0 0 200px;
+  padding: 5px;
+  border-right: 1px solid #ccc;
+}
+
+.schedule-management .task-timeline {
+  flex: 1;
+  position: relative;
+  height: 30px;
+}
+
+.schedule-management .task-bar {
+  position: absolute;
+  height: 100%;
+  background-color: #007bff;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+.calendar-chart {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+}
+
+.calendar-chart h2 {
+  margin-bottom: 1rem;
+}
+
+/* You might need to adjust these styles based on your specific layout needs */
+.rbc-calendar {
+  min-height: 500px;
+}
+.financial-management {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.expandable {
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.expandable h2 {
+  background-color: #f5f5f5;
+  padding: 10px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.chart-container {
+  height: 300px;
+}
+
+.budget-summary {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0;
+}
+
+.summary-item {
+  text-align: center;
+}
+
+.budget-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+.budget-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  width: calc(33.333% - 20px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.search-filter {
+  display: flex;
+  gap: 10px;
+  padding: 20px;
+}
+
+.change-order-list,
+.pay-application-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.change-order-item,
+.pay-application-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.status {
+  padding: 2px 5px;
+  border-radius: 3px;
+  font-size: 0.8em;
+}
+
+.status.approved { background-color: #4CAF50; color: white; }
+.status.pending { background-color: #FFC107; }
+.status.rejected { background-color: #F44336; color: white; }
+
+.positive { color: green; }
+.negative { color: red; }
+.division-header {
+  background-color: #f0f0f0;
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.budget-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.budget-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Add styles for pagination controls */
+.budget-cards {
+  display: flex;
+  overflow-x: auto;
+  padding: 20px 0;
+}
+
+.budget-card {
+  min-width: 250px;
+  margin-right: 20px;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.budget-card-header {
+  background-color: #f0f0f0;
+  padding: 10px;
+  font-weight: bold;
+  border-bottom: 1px solid #ddd;
+  border-radius: 8px 8px 0 0;
+}
+
+.budget-card-body {
+  padding: 10px;
+}
+
+.budget-card-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.budget-card-row input {
+  width: 100px;
+  padding: 2px 5px;
+}
+
+.add-budget-item {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.add-budget-item h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.form-row label {
+  flex-basis: 40%;
+}
+
+.form-row input,
+.form-row select {
+  flex-basis: 55%;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.add-budget-item button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-budget-item button:hover {
+  background-color: #45a049;
+}
+
+.add-budget-item button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}

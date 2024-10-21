@@ -1,15 +1,16 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/index.js',  // Main entry point
+  entry: './src/index.js',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'public/dist'),
+    publicPath: '/dist/',
   },
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,  // For JavaScript and JSX
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
@@ -19,17 +20,36 @@ module.exports = {
         },
       },
       {
-        test: /\.css$/,  // Handle CSS files
+        test: /\.css$/,
         use: ['style-loader', 'css-loader'],
       },
     ],
   },
   resolve: {
-    extensions: ['.js', '.jsx'],  // Resolve these extensions
+    extensions: ['.js', '.jsx'],
   },
   devServer: {
-    static: path.join(__dirname, 'public'),  // Serve from 'public'
-    compress: true,  // Enable gzip compression
-    port: 3000,  // Port to run dev server
+    static: {
+      directory: path.join(__dirname, 'public'),
+    },
+    compress: true,
+    port: 3000,
+    historyApiFallback: true,
+    proxy: [
+      {
+        context: ['/api'], // Define which paths to proxy
+        target: 'http://localhost:5000', // Backend Flask server
+        changeOrigin: true,
+        secure: false,
+      },
+    ],
+    client: {
+      webSocketURL: {
+        hostname: 'localhost',
+        pathname: '/ws',
+        port: 3000,
+      },
+    },
+    hot: true,
   },
 };

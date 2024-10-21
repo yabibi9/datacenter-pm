@@ -1,18 +1,17 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+
+// Correct component imports
 import ThreeDModelViewer from './components/ThreeDModelViewer';
 import TaskSummary from './components/TaskSummary';
-import FinancialManagement from './pages/FinancialManagement'; 
-import ScheduleManagement from './pages/ScheduleManagement'; 
-import DocumentManagement from './pages/DocumentManagement'; 
+import FinancialManagement from './pages/FinancialManagement';
+import ScheduleManagement from './pages/ScheduleManagement';
+import DocumentManagement from './pages/DocumentManagement';
 import ProjectOverview from './components/ProjectOverview';
 import ResourceAllocation from './components/ResourceAllocation';
+import SubcontractorTracker from './components/SubcontractorTracker';
 
 function App() {
-  console.log('App component is rendering');
-  console.log('ProjectOverview import:', ProjectOverview);
-  console.log('ResourceAllocation import:', ResourceAllocation);
-
   return (
     <Router>
       <div className="App">
@@ -24,38 +23,23 @@ function App() {
               <li><Link to="/financials">Financial Management</Link></li>
               <li><Link to="/schedule">Schedule Management</Link></li>
               <li><Link to="/documents">Document Management</Link></li>
+              <li><Link to="/tracker">Subcontractor Tracker</Link></li>
+              <li><Link to="/3d-model-viewer">3D Model Viewer</Link></li>
+              <li><Link to="/resource-allocation">Resource Allocation</Link></li>
             </ul>
           </nav>
         </header>
 
         <main>
           <Routes>
-            <Route 
-              path="/" 
-              element={
-                <section id="dashboard">
-                  <h1>Project Dashboard</h1>
-                  <div className="widget" id="project-overview">
-                    <ProjectOverview />
-                  </div>
-                  <div className="widget" id="model-viewer">
-                    <h2>3D Model Viewer</h2>
-                    <ThreeDModelViewer />
-                  </div>
-                  <div className="widget" id="task-summary">
-                    <TaskSummary />
-                  </div>
-                  <div className="widget" id="resource-allocation">
-                    <h2>Resource Allocation</h2>
-                    {/* Resource allocation content */}
-                  </div>
-                </section>
-              } 
-            />
+            <Route path="/" element={<ProjectOverview />} />
             <Route path="/tasks" element={<TaskSummary />} />
             <Route path="/financials" element={<FinancialManagement />} />
             <Route path="/schedule" element={<ScheduleManagement />} />
             <Route path="/documents" element={<DocumentManagement />} />
+            <Route path="/tracker" element={<SubcontractorTracker />} />
+            <Route path="/3d-model-viewer" element={<ThreeDModelViewer />} />
+            <Route path="/resource-allocation" element={<ResourceAllocation />} />
           </Routes>
         </main>
 

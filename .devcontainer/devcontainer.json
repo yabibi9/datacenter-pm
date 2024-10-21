@@ -1,0 +1,14 @@
+{
+    "forwardPorts": [3000, 5000],
+    "portsAttributes": {
+      "3000": {
+        "label": "Webpack Dev Server",
+        "visibility": "public"
+      },
+      "5000": {
+        "label": "Flask Server",
+        "visibility": "public"
+      }
+    }
+  }
+  
